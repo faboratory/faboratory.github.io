@@ -1,9 +1,0 @@
-name: "FABoratory"
-description: "3D impression Lab"
-
-url: 
-
-paginate: 1
-
-markdown: rdiscount
-permalink: pretty
