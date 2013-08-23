@@ -1,49 +1,28 @@
 ---
-layout: default
+layout: tallers
+
 ---
 
-{% for post in paginator.posts limit:10 %}
-   <div class="row-fluid">
-  <div class="span12">
-    <h2>{{ post.title }}</h2>
-    <h4>{{ post.date | date: "%m-%d-%Y" }}</h4>
-    <p>
-      <a href="{{site.url}}{{ post.url }}">Read Post</a>
-    </p>
-  </div>
-</div>{% endfor %}
+{% for taller in site.tags.workshop reversed%}
 
-<div class="row-fluid">
-  <div class="span12">
-    <div class="pagination">
-      <ul>
-        {% if paginator.previous_page %}
-          {% if paginator.previous_page == 1 %}
-          <li><a href="{{site.url}}/">Prev</a></li>
-          {% else %}
-          <li><a href="{{site.url}}/page{{ paginator.previous_page }}">Prev</a></li>
-          {% endif %}
-        {% else %}
-        <li><span class="disabled">Prev</span></li>
-        {% endif %}
-        {% if paginator.page == 1 %}
-        <li><span class="active">1</span></li>
-        {% else %}
-        <li><a href="{{site.url}}/">1</a></li>
-        {% endif %}
-        {% for count in (2..paginator.total_pages) %}
-          {% if count == paginator.page %}
-          <li><span class="active">{{ count }}</span></li>
-          {% else %}
-          <li><a href="{{site.url}}/page{{ count }}">{{ count }}</a></li>
-          {% endif %}
-        {% endfor %}
-        {% if paginator.next_page %}
-        <li><a href="{{site.url}}/page{{ paginator.next_page }}">Next</a></li>
-        {% else %}
-        <li><span class="disabled">Next</span></li>
-        {% endif %}
-      </ul>
-    </div>
-  </div>
-</div>
+    <li class="item" data-id="id-1" data-type="art">
+        <div class="view view-first">
+            <img src="placeholders/portfolio-images/{{taller.image}}" alt="" />
+            <div class="entry-content"> <br>
+                <h5 class="entry-title"><a href="#" > {{taller.title}} </a></h5>
+                {{taller.description}}
+            </div>
+            <div class="mask">
+                <ul>
+                    <li class="pf-header"><a href="{{site.url}}{{taller.url}}" onClick="return felixplus_portfolio_detail_click(jQuery(this), 1, true);">View Project</a></li>
+                    <li class="pf-lightbox"><a href="placeholders/portfolio-images/{{taller.image}}" rel="prettyPhoto[Gallery]">Open in Lightbox</a></li>
+                    <li class="pf-footer">
+                        <h5>Dribbble icon</h5>
+                        <span>iOs application</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </li>
+
+{% endfor %}

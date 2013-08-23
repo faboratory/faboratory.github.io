@@ -1,9 +1,6 @@
 name: "FABoratory"
-description: "3D impression Lab"
 
-url: "http://jarone.github.com"
-
-paginate: 1
+url: 
 
 markdown: rdiscount
 permalink: pretty

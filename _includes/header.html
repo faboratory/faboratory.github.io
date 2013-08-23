@@ -1,58 +1,199 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>{{ site.name }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ site.description }}">
+<!doctype html>
+<html lang="cat">
+<head>
+    <meta charset="UTF-8" />
+	<title>FABoratory - 3D printers</title>
+	<meta name="description" content="FABoratory - 3D printers" />
 
-    <link id ="css" href="{{site.url}}/css/bootstrap.css" rel="stylesheet">
-    <style>
-      body {
-        padding-top: 60px;
-      }
-    </style>
-    <link id ="js" href="{{site.url}}/css/bootstrap-responsive.css" rel="stylesheet">
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <script> 
-       $("#css").error(function () {
-          var canvas = document.getElementById("css").href="../css/bootstrap.css";
-      });
+	<meta name="keywords" content="3D, printers, openhardware, workshops" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+    <link rel="stylesheet" href="{{site.url}}/css/bootstrap.css" media="all">
+    <link rel="stylesheet" href="{{site.url}}/css/font-awesome.min.css" media="all">
+    <link rel="stylesheet" href="{{site.url}}/css/flexslider.css" media="all">
+    <link rel="stylesheet" href="{{site.url}}/css/prettyPhoto.css" media="all">
+    <link rel="stylesheet" href="{{site.url}}/css/mediaelementplayer.min.css" media="all">
+    <link rel="stylesheet" href="{{site.url}}/css/pf-dropdown.css" media="all">
+    <link rel="stylesheet" href="{{site.url}}/css/superfish.css" media="all">
+	<link rel="stylesheet" href="{{site.url}}/css/bra_social_media.css" media="all">
+	<link rel="stylesheet" href="{{site.url}}/css/component.css" media="all">
+	<link rel="stylesheet" href="{{site.url}}/css/theme-options.css" media="all">
+    <link rel="stylesheet" href="{{site.url}}/css/style.css" media="all" />
+    <link rel="stylesheet" href="{{site.url}}/css/bootstrap-responsive.css" media="all">
+    <link rel="stylesheet" href="{{site.url}}/css/responsive.css" media="all">
 
-         $("#js").error(function () {
-          var canvas = document.getElementById("js").href="../css/bootstrap-responsive.css";
-      });
-
-    </script>
-
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></sc\
-ript>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+		<link rel="stylesheet" href="css/ie.css" type="text/css" media="all" />		
     <![endif]-->
-  </head>
 
-  <body>
+    <!-- Favicons
+        ================================================== -->
+    <link rel="shortcut icon" href="{{site.url}}/images/favicon.ico">
+	
+	<!-- Style
+	================================================== -->
+    <link rel="stylesheet" href="{{site.url}}/css/skin/orange.css" type="text/css" id="colors" />
+    <link rel="stylesheet" href="{{site.url}}/css/skin/orange.css" type="text/css" id="templates" />
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".na\
-v-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="#">{{ site.name }}</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="active"><a href="{{site.url}}/">Home</a></li>
-              <li class="active"><a href="{{site.url}}/about/">About</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- Font
+            ================================================== -->
+    <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,300italic,200italic,400italic,600italic,600,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
-    <div class="container">
-
+</head>
+<body class="pf-3col dark-footer">
+	
+	<header id="flx-header" class="flx-divider cbp-af-header">
+    	
+        <div class="wrapper">
+        	
+            <div class="row-fluid">
+            	
+                <div class="span12 clearfix">
+                	
+                    <div id="logo-image">
+                    
+                    	<a href="{{site.url}}/index.html"><img src="{{site.url}}/placeholders/logo.png" alt="" /></a>
+                        
+                    </div><!--end:logo-image-->
+                    
+                     <nav id="main-nav">
+                    
+                    	<ul id="main-menu" class="clearfix">
+                        
+                        	<li>
+                            	<a href="index.html"> Novetats</a>
+                                <ul>
+                                	<li><a href="index.html">Features</a></li>
+                                    <li><a href="index2.html">Blog Posts</a></li>
+                                </ul>
+                            </li>
+                            <li >
+                            	<a href="#"> Tallers</a>
+                                <ul>
+                                	<li><a href="about-us.html">Cat 1</a></li>
+                                    <li><a href="about-me.html">Cat 2</a></li>
+                                    <li><a href="services.html">Cat 3</a></li>
+                                </ul>
+                            </li>
+                            <li >
+                            	<a href="portfolio.html"> Màquines</a>
+                                <ul>
+                                	<li><a href="portfolio-4col.html">Cat A</a></li>
+                                    <li ><a href="portfolio-3col.html">Cat B</a></li>
+                                    <li><a href="portfolio-2col.html">Cat C</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                            	<a href="#"> Projectes</a>
+                                <ul>
+                                	<li><a href="typography.html">Typography</a></li>
+                                    <li><a href="pricing-table.html">Pricing Table</a></li>
+                                    <li><a href="icons.html">Icons</a></li>
+                                    <li><a href="elements.html">Elements</a></li>
+                                </ul>
+                            </li>
+                             <li>
+                            	<a href="blog.html"> Blog</a>
+                                </li>
+                                <li>
+                                       <a href="shop.html"> Info </a>
+                                        <ul >
+                                            <li><a href="product-details.html">About</a></li>
+                                            <li><a href="shopingcart.html">Mapa </a></li>
+                                            <li><a href="shopingcart.html">Equip </a></li>
+                                        </ul>
+                                </li>
+                        </ul><!--end:main-menu-->
+						
+                     <div id="dl-menu" class="dl-menuwrapper">
+                            <button>Open Menu</button>
+                            <ul class="dl-menu">
+                                <li>
+                                    <a href="#">Home</a>
+                                    <ul class="dl-submenu">
+                                        <li class="dl-back"><a href="#">back</a></li>
+                                        <li><a href="index.html">Home example 1</a></li>
+                                        <li><a href="index2.html">Home example 2</a></li>
+                                        <li><a href="index3.html">Home Example 3</a></li>
+                                        <li><a href="index4.html">Home example 4</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Templates</a>
+                                    <ul class="dl-submenu">
+                                        <li class="dl-back"><a href="#">back</a></li>
+                                        <li><a href="about-us.html">About us</a></li>
+                                        <li><a href="about-me.html">About me</a></li>
+                                        <li><a href="services.html">Services</a></li>
+                                        <li><a href="error404.html">Error 404</a></li>
+                                        <li><a href="under-construction.html">Under Construction</a></li>
+                                        <li><a href="contacts.html">Contacts</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="portfolio.html">Portfolio</a>
+                                    <ul class="dl-submenu">
+                                        <li class="dl-back"><a href="#">back</a></li>
+                                        <li><a href="portfolio.html">5 column</a></li>
+                                        <li><a href="portfolio-4col.html">4 column</a></li>
+                                        <li><a href="portfolio-3col.html">3 column</a></li>
+                                        <li><a href="portfolio-2col.html">2 column</a></li>
+                                        <li>
+                                            <a href="project-details.html">Project Details</a>
+                                            <ul class="dl-submenu">
+                                                <li class="dl-back"><a href="#">back</a></li>
+                                                <li><a href="project-details.html">Single</a></li>
+                                                <li><a href="project-slide.html">Gallery</a></li>
+                                                <li><a href="project-video.html">Video Html5</a></li>
+                                                <li><a href="project-audio.html">Audio Html5</a></li>
+                                                <li><a href="project-youtube.html">Youtube</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Features</a>
+                                    <ul class="dl-submenu">
+                                        <li class="dl-back"><a href="#">back</a></li>
+                                        <li><a href="typography.html">Typography</a></li>
+                                        <li><a href="pricing-table.html">Pricing Table</a></li>
+                                        <li><a href="icons.html">Icons</a></li>
+                                        <li><a href="elements.html">Elements</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="blog.html">Blog</a>
+                                    <ul class="dl-submenu">
+                                        <li class="dl-back"><a href="#">back</a></li>
+                                        <li><a href="blog1.html">Blog I</a></li>
+                                        <li><a href="blog2.html">Blog II</a></li>
+                                        <li><a href="blog3.html">Blog III</a></li>
+                                        <li><a href="blog4.html">Blog IV</a></li>
+                                        <li><a href="blog.html">Blog V</a></li>
+                                        <li><a href="blogpost.html">Blog Post</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                       <a href="shop.html"><i class="icon-shopping-cart"></i> Shop</a>
+                                        <ul >
+                                            <li><a href="product-details.html">Product Details</a></li>
+                                            <li><a href="shopingcart.html">Shopingcart</a></li>
+                                        </ul>
+                                </li>
+                            </ul>
+                        </div><!-- /dl-menuwrapper -->
+	
+                        
+                    </nav><!--end:main-nav-->
+                    
+                </div><!--end:span12-->
+                
+            </div><!--end:row-fluid-->
+            
+        </div><!--end:wrapper-->
+        
+    </header><!--end:flx-header-->
