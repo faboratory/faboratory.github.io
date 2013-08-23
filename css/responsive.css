@@ -12,6 +12,8 @@ only screen and (        min-device-pixel-ratio: 2),
 only screen and (                min-resolution: 192dpi),
 only screen and (                min-resolution: 2dppx) {
 
+
+
 #flx-header {
 	background-image:url(../images/background/top-line@2x.png);
 	background-size:1600px 8px;
@@ -291,6 +293,7 @@ blockquote {
 /*-----------------Logo------------------*/
 #logo-image {
 	margin-top:10px;
+	width: 10%;
 }
 /*-----------------Main Menu------------------*/
 #main-menu > li > a {
@@ -379,6 +382,12 @@ blockquote {
 .view .mask ul li.pf-footer span {
 	margin-bottom:0px;
 }
+
+/* =========================================================
+*************************DL NAV***********************
+============================================================ */
+
+
 /*----------------Recent Widget--------------------*/
 .recent-widget .list-carousel.responsive {
 	margin:0 -1px -1px 1px;
@@ -992,6 +1001,7 @@ blockquote {
 /*-----------------Logo------------------*/
 #logo-image {
 	margin:10px 0;
+	width:10%;
 }
 /*-----------------Main Menu------------------*/
 #main-menu {
@@ -1863,6 +1873,7 @@ body {
 /*-----------------Logo------------------*/
 #logo-image {
 	margin:10px 0;
+	width: 10%;
 }
 /*-----------------Main Menu------------------*/
 #main-menu {
@@ -3106,7 +3117,7 @@ body {
 /*-----------------Logo------------------*/
 #logo-image {
 	margin:15px 0;
-	width:180px;
+	width:20%;
 }
 /*-----------------Main Menu------------------*/
 #main-menu {

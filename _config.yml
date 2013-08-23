@@ -1,11 +1,7 @@
 name: "FABoratory"
 
-url: 
-<<<<<<< HEAD
-=======
+url: "https://jarone.github.com"
 
-paginate: 1
->>>>>>> e2cc91708372601337008a97d0cc40421ed7e483
 
 markdown: rdiscount
-permalink: pretty
+permalink: /:categories/:title/
