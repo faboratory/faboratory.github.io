@@ -1,0 +1,77 @@
+{% include header.html %}
+
+    <div id="main-content">
+        <div class="flx-divider">
+        
+            <div class="wrapper flx-line">
+
+                <div class="row-fluid">
+                
+                    <div class="span12">
+                    
+                        <ul class="flx-service-4 clearfix">
+                            {% include tipus_taller.html %}
+                        </ul>
+                        
+                    </div><!--end:span12-->
+                
+                </div><!--end:row-fluid-->
+            
+            </div><!--end:wrapper-->
+            
+        </div><!--end:flx-divider-->
+        
+        
+        <div class="pf-detail-box flx-divider" id="pf-detail-box" style="display: none;">
+            <div class="wrapper flx-line">        
+                <div class="row-fluid">
+                    <div class="span12">
+                    </div><!--end:span12-->                                    
+                </div><!--end:row-fluid-->     
+            </div><!--end:wrapper-->
+        </div><!--end:pf-detail-box-->
+        
+        <!--<section class="widget portfolio-widget flx-divider ff-container">
+        
+        	<header class="flx-header flx-divider">
+                <div class="wrapper flx-line clearfix">
+                    <select id="cd-dropdown" class="cd-select">
+                        <option value="-1" selected>Sort Portfolio</option>
+                        <option value="1" class="all">All</option>
+                        <option value="2" class="ill">illustrator</option>
+                        <option value="3" class="photo">Photoshop</option>
+                        <option value="4" class="digital">Digital</option>
+                        <option value="5" class="art">Art</option>
+                    </select>
+                </div>end:wrapper
+            </header> -->
+            
+            <div class="wrapper flx-line">
+            
+            	<div class="row-fluid">
+                	
+                    <div class="span12">
+                        
+                        <ul class="pf-box ourHolder clearfix">
+       							{{content}}
+                        </ul>
+                        
+                        
+                            
+                    </div><!--end:span12-->
+                    
+                </div><!--end:row-fluid-->
+                
+            </div><!--end:wrapper-->
+        
+      <!--  </section>end:portfolio-widget-->
+        
+    </div><!--end:main-content-->
+
+    
+
+
+
+
+{% include footer.html %}
+{% include scripts.html %}

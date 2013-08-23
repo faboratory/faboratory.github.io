@@ -1,0 +1,9 @@
+{% for t in site.tags.tipus reversed %}
+	<li class="clearfix">
+	    <span ><i class="icon-star-empty"></i></span>
+	    <div class="entry-content">
+	        <h5 class="entry-title"><a href="#" >{{t.title}}</a></h5>
+	        <p>{{t.contingut}}</p>
+	    </div>
+	</li>
+{% endfor %}

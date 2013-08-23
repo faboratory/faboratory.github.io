@@ -1,0 +1,53 @@
+{% include header.html %}
+    <div id="main-content">
+        
+        
+        <section class="widget portfolio-widget portfolio-detail flx-divider">
+        
+            <header class="flx-header flx-divider">
+                <div class="wrapper flx-line clearfix">
+                </div><!--end:wrapper-->
+            </header>
+            
+            <div class="wrapper flx-line">
+            
+                <div class="row-fluid">
+                    
+                    <div class="span12">
+                        
+                        <article class="pf-detail-item clearfix">
+                            <h2 class="widget-title">{{ page.title }}</h2>
+                            <div class="pf-detail-img"><img src="{{site.url}}/placeholders/portfolio-images/{{ page.image }}" alt="" /></div>
+                            <div class="pf-content clearfix">
+                                <header class="clearfix">
+                                    <span class="entry-categories"><i class="icon-suitcase"></i><a  href="#"> {{page.tipus}}</a></span>
+                                    <span class="entry-date"><i class="icon-time"></i>{{ page.date | date_to_long_string }}</span>
+                                </header>
+                                {{content}}
+                                <ul class="pf-detail-meta">
+                                    <li class="clearfix"><i class="icon-ok-sign"></i><a  href="#">Branding</a></li>
+                                    <li class="clearfix"><i class="icon-ok-sign"></i><a  href="#">HTML/CSS</a></li>
+                                </ul><!--end:pf-detail-meta-->
+                                <nav class="pf-detail-nav clearfix"> <!-- FLECHA per navegar per altres tallers... -->
+                                    <a class="pf-detail-prev" href="project-youtube.html"></a>
+                                    <a class="pf-detail-hide" href="portfolio.html"></a>
+                                    <a class="pf-detail-next" href="project-slide.html"></a>
+                                </nav><!--end:pf-detail-nav-->
+                            </div><!--end:pf-content-->
+                        </article><!--end:pf-detail-item-->
+                        
+                        
+                            
+                    </div><!--end:span12-->
+                    
+                </div><!--end:row-fluid-->
+                
+            </div><!--end:wrapper-->
+        
+        </section><!--end:portfolio-widget-->
+        
+{% include summary.html %}
+</div><!--end:main-content-->
+
+{% include footer.html %}
+{% include scripts.html %}

@@ -1,0 +1,43 @@
+<section class="widget portfolio-widget flx-divider ff-container">
+
+    <header class="flx-header flx-divider">
+        <div class="wrapper flx-line clearfix">
+        </div><!--end:wrapper-->
+    </header>
+    
+    <div class="wrapper flx-line">
+    
+        <div class="row-fluid">
+            
+            <div class="span12">
+                
+                <h2 class="widget-title">Altres tallers</h2>
+                
+                <ul class="pf-box clearfix">
+                    {% for t in site.tags.workshop reversed%}
+                    <li>
+                        <div class="view view-first">
+                            <img src="{{site.url}}/placeholders/portfolio-images/{{t.image}}" alt="" />
+                            <div class="mask">
+                                <ul>
+                                    <li class="pf-header"><a href="{{site.url}}{{t.url}}" onClick="return felixplus_portfolio_detail_click(jQuery(this), 1, true);">{{t.title}}</a></li>
+                                    <li class="pf-lightbox"><a href="placeholders/portfolio-images/{{t.image}}" rel="prettyPhoto[Gallery]">Open in Lightbox</a></li>
+                                    <li class="pf-footer">
+                                        <h5>Dribbble icon</h5>
+                                        <span>iOs application</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                        
+                </ul>
+                    
+            </div><!--end:span12-->
+            
+        </div><!--end:row-fluid-->
+        
+    </div><!--end:wrapper-->
+
+</section><!--end:portfolio-widget-->
