@@ -1,0 +1,29 @@
+---
+layout: tallers
+body: 'pf-3col'
+
+---
+
+{% for taller in site.tags.workshop reversed%}
+
+    <li class="item" data-id="id-1" data-type="art">
+        <div class="view view-first">
+            <img src="placeholders/portfolio-images/{{taller.image}}" alt="" />
+            <div class="entry-content"> <br>
+                <h5 class="entry-title"><a href="#" > {{taller.title}} </a></h5>
+                {{taller.description}}
+            </div>
+            <div class="mask">
+                <ul>
+                    <li class="pf-header"><a href="{{site.url}}{{taller.url}}" onClick="return felixplus_portfolio_detail_click(jQuery(this), 1, true);">View Project</a></li>
+                    <li class="pf-lightbox"><a href="placeholders/portfolio-images/{{taller.image}}" rel="prettyPhoto[Gallery]">Open in Lightbox</a></li>
+                    <li class="pf-footer">
+                        <h5>Dribbble icon</h5>
+                        <span>iOs application</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </li>
+
+{% endfor %}
