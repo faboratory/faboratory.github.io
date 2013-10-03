@@ -1,29 +1,45 @@
 ---
-layout: tallers
-body: 'pf-3col'
+layout: tipo_layout
+body: 'pf-3col pf-list-style'
 
+lang: cat
+
+tipologia: 'tallers'
 ---
 
-{% for taller in site.tags.workshop reversed%}
+{% for t in site.tags.categoria_tallers reversed %}
 
-    <li class="item" data-id="id-1" data-type="art">
-        <div class="view view-first">
-            <img src="placeholders/portfolio-images/{{taller.image}}" alt="" />
-            <div class="entry-content"> <br>
-                <h5 class="entry-title"><a href="#" > {{taller.title}} </a></h5>
-                {{taller.description}}
-            </div>
-            <div class="mask">
-                <ul>
-                    <li class="pf-header"><a href="{{site.url}}{{taller.url}}" onClick="return felixplus_portfolio_detail_click(jQuery(this), 1, true);">View Project</a></li>
-                    <li class="pf-lightbox"><a href="placeholders/portfolio-images/{{taller.image}}" rel="prettyPhoto[Gallery]">Open in Lightbox</a></li>
-                    <li class="pf-footer">
-                        <h5>Dribbble icon</h5>
-                        <span>iOs application</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </li>
+ {% if t.lang == page.lang %}
 
+    <section class="widget portfolio-widget portfolio-detail flx-divider">
+
+
+        
+        <div class="wrapper flx-line">
+        
+            <div class="row-fluid">
+                
+                <div class="span12">
+                    
+                    <article class="pf-detail-item clearfix">
+                        <h2 class="widget-title"></h2>
+
+                        <div class="pf-detail-img span3"> <a  href="{{t.url}}"><img src="{{site-url}}/placeholders/portfolio-images/{{t.image}}" alt="" /></a></div>
+                        <div class="pf-content clearfix span6">
+                             <a  href="{{t.url}}"><h3>{{t.title}}</h3></a>
+                            <p>{{t.contingut}}</p>
+                        </div><!--end:pf-content-->
+                    </article><!--end:pf-detail-item-->
+                    
+                    
+                        
+                </div><!--end:span12-->
+                
+            </div><!--end:row-fluid-->
+            
+        </div><!--end:wrapper-->
+
+    </section><!--end:portfolio-widget-->
+
+ {% endif %}
 {% endfor %}

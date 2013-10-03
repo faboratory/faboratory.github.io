@@ -1,6 +1,23 @@
 {% include header.html %}
 
   <div id="main-content">
+        <div class="breadcrumb flx-divider">
+        
+            <div class="wrapper flx-line">
+            
+                <div class="row-fluid">
+                
+                    <div class="span12 clearfix">
+                        <a  href="{{site.url}}/index.html">Home</a>
+                        <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                        <span>{{t.[page.lang].info.informacio}}</span>
+                    </div><!--end:span12-->
+                
+                </div><!--end:row-fluid-->
+            
+            </div><!--end:wrapper-->
+        
+        </div><!--end:breadcrumb-->
 
         <section class="  flx-intro flx-divider">
         
@@ -12,7 +29,7 @@
                         
                         <div class=" elements-box flx-intro-content">
                         
-                            <h1 class="element-title">Informació</h1>
+                            <h1 class="element-title">{{t.[page.lang].info.informacio}}</h1>
                             
                         </div><!--end:flx-intro-content-->
                     
@@ -24,18 +41,17 @@
             
         </section><!--end:flx-intro-->
     
-    <div class="elements-box flx-divider">
+    <div  class="elements-box flx-divider">
         
             <div class="wrapper flx-line clearfix">
             
-                <div class="row-fluid">
+                <div id ="about" class="row-fluid">
                     
                     <div class="span8">
                         <h2 class="element-title">About</h2>
                         
                         <div class="elements-box-right">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae erat libero. Phasellus mauris erat, dapibus nec feugiat vel, lobortis sed diam. Fusce vehicula nisl vel dui ullamcorper nec condimentum nisi dictum. Donec quis diam nec ipsum gravida eleifend. Integer risus odio, bibendum quis ullamcorper et, sagittis id neque. Nunc fringilla, orci eu porta tristique, lectus nunc facilisis tortor, ac mattis mi nunc vitae justo. Nulla enim quam, porttitor non vestibulum nec, cursus quis nulla.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis risus nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla facilisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus luctus, tellus eget mattis scelerisque, quam lacus cursus nunc, eu adipiscing mauris enim vitae erat. Phasellus ornare lorem vitae sem luctus congue. Praesent a enim purus.</p>
+                            {{page.content}}
                         </div> <br>
                         
    
@@ -43,7 +59,7 @@
                     </div><!--end:span8-->
 
                     <div class="span3">
-                        <h2 class="element-title"> Contacte</h2>
+                        <h2 class="element-title"> {{t.[page.lang].info.contacte}}</h2>
                         
                         <div class="elements-box-right">
                             <p> info@faboratory.org </p>
@@ -55,12 +71,14 @@
 
                 <hr></hr>
                 
-                <div class="row-fluid">
+                <div  id ="map" class="row-fluid">
 
                     <div class="span12">
-                        <h2 class="element-title"> Mapa </h2>
+                        <h2 class="element-title"> {{t.[page.lang].info.mapa}} </h2>
                         
                         <div class="elements-box-right">
+                            <div id="map_canvas"></div>
+
                             
                         </div> <br>
  
@@ -69,14 +87,33 @@
 
                 
                 </div><!--end:row-fluid-->
-            
+
                 <hr></hr>
-                <div class="row-fluid">
+            
+                <div  id ="equip" class="row-fluid">
 
                      <div class="span12">
-                        <h2 class="element-title"> Equip </h2>
+                        <h2 class="element-title"> {{t.[page.lang].info.equip}} </h2>
                         
-                        <div class="elements-box">
+                        <div class="elements-box-right">
+                          
+                          {% for team in page.team_names %}
+
+                            <article class="pf-detail-item clearfix">
+
+                                <div class="pf-detail-img span3"><img src="{{site.url}}/placeholders/avatar/avatar-6.jpg" alt="" /></div>
+                                 <div class="pf-content clearfix span6">
+                                    <h3> {{team}}</h3>   
+                                     <p>{{page.team_description[forloop.index0]}}</p>
+                                 </div> <br>
+
+                            </article>
+
+                            {% unless forloop.last %}
+                              <hr></hr>
+                            {% endunless %}
+
+                          {% endfor %}
                             
                         </div> <br>
  
@@ -90,5 +127,29 @@
         
     </div><!--end:main-content-->
 {% include footer.html %}
+
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script>
+      function initialize() {
+        var map_canvas = document.getElementById('map_canvas');
+        var myLatlng = new google.maps.LatLng(41.40820, 2.19978);
+
+        var map_options = {
+          center: myLatlng,
+          zoom: 15,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(map_canvas, map_options);
+
+          var marker = new google.maps.Marker({
+              position: myLatlng,
+              map: map,
+              title: 'Hello World!'
+         });
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+
 {% include scripts.html %}
     

@@ -10,29 +10,90 @@
         <div class="row-fluid">
             
             <div class="span12">
+
+            {% if page.tags[0] == 'workshop' %}
                 
-                <h2 class="widget-title">Altres tallers</h2>
+                <h2 class="widget-title">{{t.[page.lang].tallers.altres}}</h2>
                 
                 <ul class="pf-box clearfix">
-                    {% for t in site.tags.workshop reversed%}
-                    <li>
-                        <div class="view view-first">
-                            <img src="{{site.url}}/placeholders/portfolio-images/{{t.image}}" alt="" />
-                            <div class="mask">
-                                <ul>
-                                    <li class="pf-header"><a href="{{site.url}}{{t.url}}" onClick="return felixplus_portfolio_detail_click(jQuery(this), 1, true);">{{t.title}}</a></li>
-                                    <li class="pf-lightbox"><a href="placeholders/portfolio-images/{{t.image}}" rel="prettyPhoto[Gallery]">Open in Lightbox</a></li>
-                                    <li class="pf-footer">
-                                        <h5>Dribbble icon</h5>
-                                        <span>iOs application</span>
-                                    </li>
-                                </ul>
+                    {% for tt in site.tags.workshop reversed%}
+
+                        {% if tt.title == page.title%}
+
+                       {% else %}
+                        <li>
+                            <div class="view view-first">
+                                <img src="{{site.url}}/placeholders/portfolio-images/{{tt.image}}" alt="" />
+                                <div class="mask">
+                                    <ul>
+                                        <li class="pf-lightbox"><a> o</a></li>
+                                        <li class="pf-header"><a href="{{site.url}}{{tt.url}}" onClick="return felixplus_portfolio_detail_click(jQuery(this), 1, true);">{{tt.title}}</a></li>
+
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                    </li>
+                        </li>
+                        {% endif %}
                     {% endfor %}
-                        
                 </ul>
+
+            {% endif %}
+
+            {% if page.tags[0] == 'machine' %}
+                
+                <h2 class="widget-title">{{t.[page.lang].maquines.altres}}</h2>
+                
+                <ul class="pf-box clearfix">
+                    {% for tt in site.tags.machine reversed%}
+
+                        {% if tt.title == page.title%}
+
+                        {% else %}
+                        <li>
+                            <div class="view view-first">
+                                <img src="{{site.url}}/placeholders/portfolio-images/{{tt.image}}" alt="" />
+                                <div class="mask">
+                                    <ul>
+                                        <li class="pf-lightbox"><a> o</a></li>
+                                        <li class="pf-header"><a href="{{site.url}}{{tt.url}}" onClick="return felixplus_portfolio_detail_click(jQuery(this), 1, true);">{{tt.title}}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+                 </ul>
+
+            {% endif %}
+
+            {% if page.tags[0] == 'project' %}
+                
+                <h2 class="widget-title">{{t.[page.lang].projectes.altres}}</h2>
+                
+                <ul class="pf-box clearfix">
+                    {% for tt in site.tags.project reversed%}
+
+                        {% if tt.title == page.title%}
+
+                        {% else %}
+                        <li>
+                            <div class="view view-first">
+                                <img src="{{site.url}}/placeholders/portfolio-images/{{tt.image}}" alt="" />
+                                <div class="mask">
+                                    <ul>
+                                        <li class="pf-lightbox"><a> o</a></li>
+                                        <li class="pf-header"><a href="{{site.url}}{{tt.url}}" onClick="return felixplus_portfolio_detail_click(jQuery(this), 1, true);">{{tt.title}}</a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+                 </ul>
+
+            {% endif %}
+               
                     
             </div><!--end:span12-->
             

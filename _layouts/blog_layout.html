@@ -1,0 +1,66 @@
+{% include header.html %}
+    
+    <div id="main-content">
+        
+        <div class="breadcrumb flx-divider">
+        
+        	<div class="wrapper flx-line">
+            
+            	<div class="row-fluid">
+                
+                	<div class="span12 clearfix">
+                    	<a  href="{{site.url}}/index.html">Home</a>
+                        <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                        <span>Blog</span>
+                    </div><!--end:span12-->
+                
+                </div><!--end:row-fluid-->
+            
+            </div><!--end:wrapper-->
+        
+        </div><!--end:breadcrumb-->
+        
+        <div class="flx-divider">
+        
+        	<div class="wrapper flx-line">
+
+                <div class="row-fluid">
+                
+                	<div class="span12">
+                    
+                    	<div id="main-col">
+                    
+                           {{content}}
+                            
+                            
+                            <!--<div class="pagination clearfix">
+                                <ul class="page-numbers clearfix">
+                                    <li><a class="prev page-numbers" href="#">Previous</a></li>
+                                    <li><a class="page-numbers" href="#">1</a></li>
+                                    <li><span class="page-numbers current">2</span></li>
+                                    <li><span class="page-numbers dots">…</span></li>
+                                    <li><a class="page-numbers" href="#">8</a></li>
+                                    <li><a class="page-numbers" href="#">9</a></li>
+                                    <li><a href="#" class="next page-numbers">Next</a></li>
+                                </ul>  end:page-numbers
+                            </div>--><!--end:pagination-->
+                        
+                        </div><!--end:main-col-->
+                        
+                        {% include blog_sidebar.html %}
+                        
+                        <div class="clear"></div>
+                    	
+                    </div><!--end:span12-->
+                
+                </div><!--end:row-fluid-->
+            
+            </div><!--end:wrapper-->
+            
+        </div><!--end:flx-divider-->
+        
+    </div><!--end:main-content-->
+
+    {% include footer.html %}
+    {% include scripts.html %}
+    

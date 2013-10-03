@@ -1,0 +1,65 @@
+{% include header.html %}
+
+    <div id="main-content">
+        <div class="breadcrumb flx-divider">
+        
+            <div class="wrapper flx-line">
+            
+                <div class="row-fluid">
+                
+                    <div class="span12 clearfix">
+
+                    {% if page.lang == 'cat' %}
+                        <a  href="{{site.url}}/index.html">Home</a>
+                        <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                    {% else %}
+                        <a  href="{{site.url}}/{{page.lang}}/index.html">Home</a>
+                        <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                    {% endif %}
+
+                    {% if page.tipologia == 'tallers' %}
+
+                            <span>{{t.[page.lang].tallers.t}}</span>
+                            <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                            <span></span>
+
+                    {% endif %}
+                
+
+                   {% if page.tipologia == 'maquines' %}
+
+                            <span>{{t.[page.lang].maquines.m}}</span>
+                            <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                            <span></span>
+
+                    {% endif %}
+
+                    {% if page.tipologia == 'projectes' %}
+
+                            <span>{{t.[page.lang].projectes.p}}</span>
+                            <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                            <span></span>
+
+                    {% endif %} 
+
+
+                    </div><!--end:span12-->
+                
+                </div><!--end:row-fluid-->
+            
+            </div><!--end:wrapper-->
+        
+        </div><!--end:breadcrumb-->
+
+
+        {{content}}
+        
+    </div><!--end:main-content-->
+
+    
+
+
+
+
+{% include footer.html %}
+{% include scripts.html %}

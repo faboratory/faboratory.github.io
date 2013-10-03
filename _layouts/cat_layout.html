@@ -1,0 +1,177 @@
+{% include header.html %}
+
+    <div id="main-content">
+        <div class="breadcrumb flx-divider">
+        
+            <div class="wrapper flx-line">
+            
+                <div class="row-fluid">
+                
+                    <div class="span12 clearfix">
+
+                    {% if page.lang == 'cat' %}
+                        <a  href="{{site.url}}/index.html">Home</a>
+                        <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                        {% if page.tipologia == 'tallers' %}
+                        
+                             <a  href="{{site.url}}/tallers.html">{{t.[page.lang].tallers.t}}</a>
+                            <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                            <span>Cat{{page.cat}}</span>
+                            <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                            <span></span>
+                            
+                         {% endif %}
+                
+
+                        {% if page.tipologia == 'maquines' %}
+
+                            <a  href="{{site.url}}/maquines.html">{{t.[page.lang].maquines.m}}</a>
+                            <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                            <span>Cat{{page.cat}}</span>
+                            <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                            <span></span>
+                        
+                        {% endif %}
+
+                        {% if page.tipologia == 'projectes' %}
+
+                            <a  href="{{site.url}}/projectes.html">{{t.[page.lang].projectes.p}}</a>
+                            <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                            <span>Cat{{page.cat}}</span>
+                            <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                            <span></span>
+
+                        {% endif %} 
+
+                    {% else %}
+                        <a  href="{{site.url}}/{{page.lang}}/index.html">Home</a>
+                        <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+
+                        {% if page.tipologia == 'tallers' %}
+                        
+                             <a  href="{{site.url}}/{{page.lang}}/tallers.html">{{t.[page.lang].tallers.t}}</a>
+                            <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                            <span>Cat{{page.cat}}</span>
+                            <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                            <span></span>
+                            
+                        {% endif %}
+                
+
+                        {% if page.tipologia == 'maquines' %}
+
+                            <a  href="{{site.url}}/{{page.lang}}/maquines.html">{{t.[page.lang].maquines.m}}</a>
+                            <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                            <span>Cat{{page.cat}}</span>
+                            <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                            <span></span>
+                        
+                        {% endif %}
+
+                        {% if page.tipologia == 'projectes' %}
+
+                            <a  href="{{site.url}}/{{page.lang}}/projectes.html">{{t.[page.lang].projectes.p}}</a>
+                            <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                            <span>Cat{{page.cat}}</span>
+                            <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                            <span></span>
+
+                        {% endif %} 
+
+                    {% endif %}
+                        
+                    
+
+                    </div><!--end:span12-->
+                
+                </div><!--end:row-fluid-->
+            
+            </div><!--end:wrapper-->
+        
+        </div><!--end:breadcrumb-->
+        <div class="flx-divider">
+        
+        <section class="widget portfolio-widget portfolio-detail flx-divider">
+
+
+    
+         <div class="wrapper flx-line">
+        
+            <div class="row-fluid">
+                
+                <div class="span12">
+                
+                    <article class="pf-detail-item clearfix">
+                        <h2 class="widget-title"></h2>
+
+                        <div class="pf-detail-img span3"> <img src="{{site-url}}/placeholders/portfolio-images/{{page.image}}" alt="" /></div>
+                        <div class="pf-content clearfix span6">
+                             <h3>{{page.title}}</h3>
+                            <p>{{page.contingut}}</p>
+                        </div><!--end:pf-content-->
+                    </article><!--end:pf-detail-item-->
+                    
+                    </div><!--end:span12-->
+                    
+                </div><!--end:row-fluid-->
+                
+            </div><!--end:wrapper-->
+
+        </section><!--end:portfolio-widget-->
+            
+        </div><!--end:flx-divider-->
+        
+        
+        <div class="pf-detail-box flx-divider" id="pf-detail-box" style="display: none;">
+            <div class="wrapper flx-line">        
+                <div class="row-fluid">
+                    <div class="span12">
+                    </div><!--end:span12-->                                    
+                </div><!--end:row-fluid-->     
+            </div><!--end:wrapper-->
+        </div><!--end:pf-detail-box-->
+        
+        <!--<section class="widget portfolio-widget flx-divider ff-container">
+        
+        	<header class="flx-header flx-divider">
+                <div class="wrapper flx-line clearfix">
+                    <select id="cd-dropdown" class="cd-select">
+                        <option value="-1" selected>Sort Portfolio</option>
+                        <option value="1" class="all">All</option>
+                        <option value="2" class="ill">illustrator</option>
+                        <option value="3" class="photo">Photoshop</option>
+                        <option value="4" class="digital">Digital</option>
+                        <option value="5" class="art">Art</option>
+                    </select>
+                </div>end:wrapper
+            </header> -->
+            
+            <div class="wrapper flx-line">
+            
+            	<div class="row-fluid">
+                	
+                    <div class="span12">
+                        
+                        <ul class="pf-box ourHolder clearfix">
+       							{{content}}
+                        </ul>
+                        
+                        
+                            
+                    </div><!--end:span12-->
+                    
+                </div><!--end:row-fluid-->
+                
+            </div><!--end:wrapper-->
+        
+      <!--  </section>end:portfolio-widget-->
+        
+    </div><!--end:main-content-->
+
+    
+
+
+
+
+{% include footer.html %}
+{% include scripts.html %}

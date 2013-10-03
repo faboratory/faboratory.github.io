@@ -1,0 +1,30 @@
+---
+layout: blog_layout
+body: 'blog-style-3'
+
+lang: en
+categories: [en]
+
+---
+
+{% for post in site.tags.blogpost limit:10 %}
+	 <article class="post-item standard-post">
+	    <header>
+	        <h2 class="entry-title"><a  href="{{site.url}}{{post.url}}">{{post.title}}</a></h2>
+	        <span class="entry-date"><i class="icon-time"></i>{{ post.date | date: "%m-%d-%Y" }}</span>
+	        <span class="entry-categories"><i class="icon-suitcase"></i><a  href="#">{{post.categoria}}</a></span>
+	    </header>
+	    <div class="flx-entry-thumb">
+	    	<a href="{{site.url}}{{post.url}}"><img src="{{site.url}}/placeholders/post-images/{{post.image}}" alt="" /></a>
+	    </div><!--end:flx-entry-thumb-->
+	    <div class="entry-content clearfix">                                	
+	        <p>{{post.sinopsis}}</p>
+	        <a href="{{site.url}}{{post.url}}" class="small-button green more-link">Continue reading</a>
+	        <div class="outside-info">
+	        	<p class="outside-date">{{ post.date | date: "%d" }}<span>{{ post.date | date: "%B" }}</span></p>
+	        </div><!--end:outside-info-->
+	    </div><!--end:entry-content-->
+	    
+	</article><!--end:post-item-->
+
+{% endfor %}

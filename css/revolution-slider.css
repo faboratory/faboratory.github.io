@@ -408,6 +408,115 @@ website:   	http://www.themepunch.com
 						max-height:none !important;	}
 
 /******************************
+	-	NEW CAPTION COLORS -Pau- -
+*******************************/
+.tp-caption.w_magenta{
+			position: absolute;
+			color: #fff;
+			text-shadow: none;
+			font-size: 50px;
+			line-height: 50px;
+			font-family: 'helvetica_condensedbold';
+			margin: 0px;
+			border-width: 0px;
+			border-style: none;
+			white-space:nowrap;
+			padding: 3px 10px;
+			background-color:rgba(206,49,104,0.8);
+			text-transform:uppercase;
+					}
+
+.tp-caption.w_green{
+			position: absolute;
+			color: #fff;
+			text-shadow: none;
+			font-size: 50px;
+			line-height: 50px;
+			font-family: 'helvetica_condensedbold';
+			margin: 0px;
+			border-width: 0px;
+			border-style: none;
+			white-space:nowrap;
+			padding: 3px 10px;
+			background-color:rgba(153,202,59,.8);
+			text-transform:uppercase;
+					}
+
+.tp-caption.b_magenta{
+			position: absolute;
+			color: #000;
+			text-shadow: none;
+			font-size: 50px;
+			line-height: 50px;
+			font-family: 'helvetica_condensedbold';
+			margin: 0px;
+			border-width: 0px;
+			border-style: none;
+			white-space:nowrap;
+			padding: 3px 10px;
+			background-color:rgba(206,49,104,0.8);
+			text-transform:uppercase;
+					}
+
+.tp-caption.b_green{
+			position: absolute;
+			color: #000;
+			text-shadow: none;
+			font-size: 50px;
+			line-height: 50px;
+			font-family: 'helvetica_condensedbold';
+			margin: 0px;
+			border-width: 0px;
+			border-style: none;
+			white-space:nowrap;
+			padding: 3px 10px;
+			background-color:rgba(153,202,59,.8);
+			text-transform:uppercase;
+					}
+
+.tp-caption.sblack{
+			position: absolute;
+			color: #000;
+			text-shadow: none;
+			font-size: 50px;
+			line-height: 50px;
+			font-family: 'helvetica_condensedbold';
+			text-transform:uppercase;
+			margin: 0px;
+			border-width: 0px;
+			border-style: none;
+			white-space:nowrap;
+					}
+
+.tp-caption.swhite{
+			position: absolute;
+			color: #fff;
+			text-shadow: none;
+			font-size: 50px;
+			line-height: 50px;
+			font-family: 'helvetica_condensedbold';
+			text-transform:uppercase;
+			margin: 0px;
+			border-width: 0px;
+			border-style: none;
+			white-space:nowrap;
+					}
+
+.tp-caption.smagenta{
+			position: absolute;
+			color: #ce3168;
+			text-shadow: none;
+			font-size: 50px;
+			line-height: 50px;
+			font-family: 'helvetica_condensedbold';
+			text-transform:uppercase;
+			margin: 0px;
+			border-width: 0px;
+			border-style: none;
+			white-space:nowrap;
+					}
+
+/******************************
 	-	BUTTONS	-
 *******************************/
 
@@ -653,9 +762,9 @@ website:   	http://www.themepunch.com
 .tp-rightarrow.square-old								{	z-index:100;cursor:pointer; position:relative;	background:url(../assets/arrow_right2.png) no-Repeat top left;	width:12px;	height:17px;   float:left;	margin-left:0px; margin-top:-9px;}
 
 
-.tp-leftarrow.default									{	z-index:100000;cursor:pointer; position:relative;	background:url(../images/slider/carousel-prev.png) no-repeat center center #ff6850;	width:40px;	height:40px; top:50% !important; 
+.tp-leftarrow.default									{	z-index:100000;cursor:pointer; position:relative;	background:url(../images/slider/carousel-prev.png) no-repeat center center #ce3168;	width:40px;	height:40px; top:50% !important; 
 														}
-.tp-rightarrow.default									{	z-index:100;cursor:pointer; position:relative;	background:url(../images/slider/carousel-next.png) no-repeat center center #ff6850;	width:40px;	height:40px; top:50% !important;
+.tp-rightarrow.default									{	z-index:100;cursor:pointer; position:relative;	background:url(../images/slider/carousel-next.png) no-repeat center center #ce3168;	width:40px;	height:40px; top:50% !important;
 
 														}
 

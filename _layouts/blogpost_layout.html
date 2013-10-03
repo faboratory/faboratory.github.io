@@ -1,0 +1,86 @@
+{% include header.html %}
+    <div id="main-content">
+        
+        <div class="breadcrumb flx-divider">
+        
+            <div class="wrapper flx-line">
+            
+                <div class="row-fluid">
+                
+                    <div class="span12 clearfix">
+                        <a  href="{{site.url}}/index.html">Home</a>
+                        <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                        <a  href="{{site.url}}/blog.html">Blog</a>
+                        <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                        <span class="current-page">{{page.title}}</span>
+                    </div><!--end:span12-->
+                
+                </div><!--end:row-fluid-->
+            
+            </div><!--end:wrapper-->
+        
+        </div><!--end:breadcrumb-->
+        
+        <div class="flx-divider">
+        
+            <div class="wrapper flx-line">
+
+                <div class="row-fluid">
+                
+                    <div class="span12">
+                    
+                        <div id="main-col">
+                    
+                            <section class="entry-box">
+                                <header>
+                                    <h2 class="entry-title">{{page.title}}</h2>
+                                    <span class="entry-date"><i class="icon-time"></i>{{ page.date | date: "%m-%d-%Y" }}</span>
+                                    <span class="entry-categories"><a  href="#">{{page.categoria}}</a></span>
+                                </header>
+                                <div class="flx-entry-thumb">
+                                     <div class="flexslider blog-post-slider">
+                                        <ul class="slides">
+                                            <li><a href="#"><img src="{{site.url}}/placeholders/post-images/{{page.image}}" alt="" /></a></li>
+                                            
+                                        </ul><!--end:slides-->
+                                    </div><!--end:blog-post-slider-->
+                                </div><!--end:flx-entry-thumb-->
+
+                                    {{content}}
+
+                                <!--<footer class="clearfix">
+                                    <p class="prev-post">
+                                        <a href="#">«&nbsp;Prev:</a>
+                                        <a class="post" href="#">Audio Post</a>
+                                    </p>
+                                    <p class="next-post">
+                                        <a class="post" href="#">Video Post</a>
+                                        <a href="#">:Next&nbsp;»</a>                                
+                                    </p>
+                                </footer> -->
+                                
+                                <div class="widget_tag_cloud">
+                                    <div class="tagcloud">
+                                        {% for tag in page.etiquetes %}
+                                            <a href="#">{{tag}}</a>
+                                        {% endfor %}
+                                   
+                                    </div><!--end:tagcloud-->
+                                </div>
+                            </section><!--end:entry-box-->
+
+                        </div><!--end:main-col-->
+                        
+                        {% include blog_sidebar.html %}
+                        
+                        <div class="clear"></div>
+                        
+                    </div><!--end:span12-->
+                
+                </div><!--end:row-fluid-->
+            
+            </div><!--end:wrapper-->
+            
+        </div><!--end:flx-divider-->
+{% include footer.html %}
+{% include scripts.html %}

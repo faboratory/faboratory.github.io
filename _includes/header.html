@@ -1,4 +1,6 @@
 <!doctype html>
+{% assign t = site.tags.translations[0] %}
+
 <html lang="cat">
 <head>
     <meta charset="UTF-8" />
@@ -19,9 +21,14 @@
 	<link rel="stylesheet" href="{{site.url}}/css/bra_social_media.css" media="all">
 	<link rel="stylesheet" href="{{site.url}}/css/component.css" media="all">
 	<link rel="stylesheet" href="{{site.url}}/css/theme-options.css" media="all">
+    <link rel="stylesheet" href="{{site.url}}/css/icoMoon.css" media="all">
+    <link rel="stylesheet" href="{{site.url}}/css/iview.css" media="all">
+    <link rel="stylesheet" href="{{site.url}}/css/revolution-slider.css" media="all">
+    <link rel="stylesheet" href="{{site.url}}/css/fullwidth.css" media="all">
     <link rel="stylesheet" href="{{site.url}}/css/style.css" media="all" />
     <link rel="stylesheet" href="{{site.url}}/css/bootstrap-responsive.css" media="all">
     <link rel="stylesheet" href="{{site.url}}/css/responsive.css" media="all">
+
 
     <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -43,6 +50,8 @@
     <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,300italic,200italic,400italic,600italic,600,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
+    
+
 </head>
 <body class="{{page.body}} dark-footer">
 	
@@ -59,55 +68,70 @@
                     	<a href="{{site.url}}/index.html"><img src="{{site.url}}/placeholders/logo3.jpg" alt="" /></a>
                         
                     </div><!--end:logo-image-->
+
+                    {% if page.lang == 'cat' %}
                     
                      <nav id="main-nav">
                     
                     	<ul id="main-menu" class="clearfix">
+
                         
-                        	<li>
-                            	<a href="{{site.url}}/index.html"> Novetats</a>
+                        	<li {% if page.layout == 'novetats' %} class="current-menu-item" {% endif %}>
+
+                                
+                            	<a href="{{site.url}}/index.html"> {{t.[page.lang].navbar.novetats}}</a>
                                 <ul>
                                 	<li><a href="{{site.url}}/index.html#Features">Features</a></li>
                                     <li><a href="{{site.url}}/index.html#Blog">Blog Posts</a></li>
                                 </ul>
                             </li>
-                            <li >
-                            	<a href="tallers.html"> Tallers</a>
+                            <li {% if page.tipologia == 'tallers' %} class="current-menu-item" {% endif %}>
+                            	<a  href="{{site.url}}/tallers.html"> {{t.[page.lang].navbar.tallers}}</a>
                                 <ul>
-                                	<li><a href="{{site.url}}/catA.html">Cat A</a></li>
-                                    <li><a href="{{site.url}}/catB.html">Cat B</a></li>
-                                    <li><a href="{{site.url}}/catC.html">Cat C</a></li>
+                                	<li><a href="{{site.url}}/tallers/catA.html">Cat A</a></li>
+                                    <li><a href="{{site.url}}/tallers/catB.html">Cat B</a></li>
+                                    <li><a href="{{site.url}}/tallers/catC.html">Cat C</a></li>
                                 </ul>
                             </li>
-                            <li >
-                            	<a href="portfolio.html"> Màquines</a>
+                            <li {% if page.tipologia == 'maquines' %} class="current-menu-item" {% endif %}>
+                            	<a href="{{site.url}}/maquines.html"> {{t.[page.lang].navbar.maquines}}</a>
                                 <ul>
-                                	<li><a href="portfolio-4col.html">Cat A</a></li>
-                                    <li ><a href="portfolio-3col.html">Cat B</a></li>
-                                    <li><a href="portfolio-2col.html">Cat C</a></li>
+                                	<li><a href="{{site.url}}/maquines/catA.html">Cat A</a></li>
+                                    <li ><a href="{{site.url}}/maquines/catB.html">Cat B</a></li>
+                                    <li><a href="{{site.url}}/maquines/catC.html">Cat C</a></li>
                                 </ul>
                             </li>
-                            <li>
-                            	<a href="#"> Projectes</a>
+                            <li {% if page.tipologia == 'projectes' %} class="current-menu-item" {% endif %}>
+                            	<a href="{{site.url}}/projectes.html"> {{t.[page.lang].navbar.projectes}}</a>
                             </li>
-                             <li>
-                            	<a href="blog.html"> Blog</a>
+                             <li {% if page.layout == 'blog_layout' or page.layout == 'blogpost_layout' %} class="current-menu-item" {% endif %}>
+                            	<a href="{{site.url}}/blog.html"> Blog</a>
                                 </li>
-                                <li>
+                                <li {% if page.layout == 'about' %} class="current-menu-item" {% endif %}>
                                        <a href="{{site.url}}/info.html"> Info </a>
                                         <ul >
-                                            <li><a href="#about">About</a></li>
-                                            <li><a href="#mapa">Mapa </a></li>
-                                            <li><a href="#equip">Equip </a></li>
+                                            <li><a href="{{site.url}}/info.html#about">About</a></li>
+                                            <li><a href="{{site.url}}/info.html#map">{{t.[page.lang].navbar.mapa}} </a></li>
+                                            <li><a href="{{site.url}}/info.html#equip">{{t.[page.lang].navbar.equip}}</a></li>
                                         </ul>
                                 </li>
+
+                                <li >
+                                       <a class="icon-globe" href="#"></a>
+                                        <ul >
+                                            <li><a href="{{site.url}}/index.html">Català</a></li>
+                                            <li><a href="{{site.url}}/es/index.html"> Castellano </a></li>
+                                            <li><a href="{{site.url}}/en/index.html"> English </a></li>
+                                        </ul>
+                                </li>
+                                
                         </ul><!--end:main-menu-->
 						
                      <div id="dl-menu" class="dl-menuwrapper">
                             <button>Open Menu</button>
                             <ul class="dl-menu">
                                 <li>
-                                    <a href="{{site.url}}/index.html">Novetats</a>
+                                    <a href="{{site.url}}/index.html">{{t.[page.lang].navbar.novetats}}</a>
                                     <ul class="dl-submenu">
                                         <li class="dl-back"><a href="#">back</a></li>
                                         <li><a href="#Features">Features </a></li>
@@ -115,36 +139,44 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="{{site.url}}/tallers.html">Tallers</a>
+                                    <a href="{{site.url}}/tallers.html">{{t.[page.lang].navbar.tallers}}</a>
                                     <ul class="dl-submenu">
                                         <li class="dl-back"><a href="#">back</a></li>
-                                        <li><a href="{{site.url}}/catA.html">Cat A</a></li>
-                                        <li><a href="{{site.url}}/catB.html">Cat B</a></li>
-                                        <li><a href="{{site.url}}/catC.html">Cat C</a></li>
+                                        <li><a href="{{site.url}}/tallers/catA.html">Cat A</a></li>
+                                        <li><a href="{{site.url}}/tallers/catB.html">Cat B</a></li>
+                                        <li><a href="{{site.url}}/tallers/catC.html">Cat C</a></li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="portfolio.html">Màquines</a>
+                                    <a href="{{site.url}}/maquines.html">{{t.[page.lang].navbar.maquines}}</a>
                                     <ul class="dl-submenu">
                                         <li class="dl-back"><a href="#">back</a></li>
-                                        <li><a href="portfolio.html">Cat A</a></li>
-                                        <li><a href="portfolio-4col.html">Cat B</a></li>
-                                        <li><a href="portfolio-3col.html">Cat C</a></li>
-                                        <li>
-                                            <a href="project-details.html">Projectes</a>
-                                        </li>
+                                        <li><a href="{{site.url}}/maquines/catA.html">Cat A</a></li>
+                                        <li ><a href="{{site.url}}/maquines/catB.html">Cat B</a></li>
+                                        <li><a href="{{site.url}}/maquines/catC.html">Cat C</a></li>
+                                   
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#">Blog</a>
+                                    <a href="{{site.url}}/maquines.html">{{t.[page.lang].navbar.projectes}}</a>
+                                    <ul class="dl-submenu">
+                                        <li class="dl-back"><a href="#">back</a></li>
+                                        <li><a href="{{site.url}}/projectes/catA.html">Cat A</a></li>
+                                        <li ><a href="{{site.url}}/projectes/catB.html">Cat B</a></li>
+                                        <li><a href="{{site.url}}/projectes/catC.html">Cat C</a></li>
+                                   
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="{{site.url}}/blog.html">Blog</a>
                                 </li>
                                 <li>
                                     <a href="{{site.url}}/info.html">Info</a>
                                     <ul class="dl-submenu">
                                         <li class="dl-back"><a href="#">back</a></li>
                                         <li><a href="#about">About</a></li>
-                                        <li><a href="#mapa">Mapa</a></li>
-                                        <li><a href="#equip">Equip</a></li>
+                                        <li><a href="#mapa">{{t.[page.lang].navbar.mapa}}</a></li>
+                                        <li><a href="#equip">{{t.[page.lang].navbar.equip}}</a></li>
                                     </ul>
                                 </li>
                        
@@ -153,6 +185,124 @@
 	
                         
                     </nav><!--end:main-nav-->
+
+                    {% else %}
+                    <nav id="main-nav">
+                    
+                        <ul id="main-menu" class="clearfix">
+
+                        
+                            <li {% if page.layout == 'novetats' %} class="current-menu-item" {% endif %}>
+
+                                
+                                <a href="{{site.url}}/{{page.lang}}/index.html"> {{t.[page.lang].navbar.novetats}}</a>
+                                <ul>
+                                    <li><a href="{{site.url}}/{{page.lang}}/index.html#Features">Features</a></li>
+                                    <li><a href="{{site.url}}/{{page.lang}}/index.html#Blog">Blog Posts</a></li>
+                                </ul>
+                            </li>
+                            <li {% if page.tipologia == 'tallers' %} class="current-menu-item" {% endif %}>
+                                <a  href="{{site.url}}/{{page.lang}}/tallers.html"> {{t.[page.lang].navbar.tallers}}</a>
+                                <ul>
+                                    <li><a href="{{site.url}}/{{page.lang}}/tallers/catA.html">Cat A</a></li>
+                                    <li><a href="{{site.url}}/{{page.lang}}/tallers/catB.html">Cat B</a></li>
+                                    <li><a href="{{site.url}}/{{page.lang}}/tallers/catC.html">Cat C</a></li>
+                                </ul>
+                            </li>
+                            <li {% if page.tipologia == 'maquines' %} class="current-menu-item" {% endif %}>
+                                <a href="{{site.url}}/{{page.lang}}/maquines.html"> {{t.[page.lang].navbar.maquines}}</a>
+                                <ul>
+                                    <li><a href="{{site.url}}/{{page.lang}}/maquines/catA.html">Cat A</a></li>
+                                    <li ><a href="{{site.url}}/{{page.lang}}/maquines/catB.html">Cat B</a></li>
+                                    <li><a href="{{site.url}}/{{page.lang}}/maquines/catC.html">Cat C</a></li>
+                                </ul>
+                            </li>
+                            <li {% if page.tipologia == 'projectes' %} class="current-menu-item" {% endif %}>
+                                <a href="{{site.url}}/{{page.lang}}/projectes.html"> {{t.[page.lang].navbar.projectes}}</a>
+                            </li>
+                             <li {% if page.layout == 'blog_layout' or page.layout == 'blogpost_layout' %} class="current-menu-item" {% endif %}>
+                                <a href="{{site.url}}/{{page.lang}}/blog.html"> Blog</a>
+                                </li>
+                                <li {% if page.layout == 'about' %} class="current-menu-item" {% endif %}>
+                                       <a href="{{site.url}}/{{page.lang}}/info.html"> Info </a>
+                                        <ul >
+                                            <li><a href="{{site.url}}/{{page.lang}}/info.html#about">About</a></li>
+                                            <li><a href="{{site.url}}/{{page.lang}}/info.html#map">{{t.[page.lang].navbar.mapa}} </a></li>
+                                            <li><a href="{{site.url}}/{{page.lang}}/info.html#equip">{{t.[page.lang].navbar.equip}}</a></li>
+                                        </ul>
+                                </li>
+
+                                <li >
+                                       <a class="icon-globe" href="#"></a>
+                                        <ul >
+                                            <li><a href="{{site.url}}/index.html">Català</a></li>
+                                            <li><a href="{{site.url}}/es/index.html"> Castellano </a></li>
+                                            <li><a href="{{site.url}}/en/index.html"> English </a></li>
+                                        </ul>
+                                </li>
+                                
+                        </ul><!--end:main-menu-->
+                        
+                     <div id="dl-menu" class="dl-menuwrapper">
+                            <button>Open Menu</button>
+                            <ul class="dl-menu">
+                                <li>
+                                    <a href="{{site.url}}/{{page.lang}}/index.html">{{t.[page.lang].navbar.novetats}}</a>
+                                    <ul class="dl-submenu">
+                                        <li class="dl-back"><a href="#">back</a></li>
+                                        <li><a href="{{site.url}}/{{page.lang}}/index.html#Features">Features </a></li>
+                                        <li><a href="{{site.url}}/{{page.lang}}/index.html#Blog">Blog Posts</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="{{site.url}}/{{page.lang}}/tallers.html">{{t.[page.lang].navbar.tallers}}</a>
+                                    <ul class="dl-submenu">
+                                        <li class="dl-back"><a href="#">back</a></li>
+                                        <li><a href="{{site.url}}/{{page.lang}}/tallers/catA.html">Cat A</a></li>
+                                        <li><a href="{{site.url}}/{{page.lang}}/tallers/catB.html">Cat B</a></li>
+                                        <li><a href="{{site.url}}/{{page.lang}}/tallers/catC.html">Cat C</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="{{site.url}}/{{page.lang}}/maquines.html">{{t.[page.lang].navbar.maquines}}</a>
+                                    <ul class="dl-submenu">
+                                        <li class="dl-back"><a href="#">back</a></li>
+                                        <li><a href="{{site.url}}/{{page.lang}}/maquines/catA.html">Cat A</a></li>
+                                        <li ><a href="{{site.url}}/{{page.lang}}/maquines/catB.html">Cat B</a></li>
+                                        <li><a href="{{site.url}}/{{page.lang}}/maquines/catC.html">Cat C</a></li>
+                                   
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="{{site.url}}/{{page.lang}}/maquines.html">{{t.[page.lang].navbar.projectes}}</a>
+                                    <ul class="dl-submenu">
+                                        <li class="dl-back"><a href="#">back</a></li>
+                                        <li><a href="{{site.url}}/{{page.lang}}/projectes/catA.html">Cat A</a></li>
+                                        <li ><a href="{{site.url}}/{{page.lang}}/projectes/catB.html">Cat B</a></li>
+                                        <li><a href="{{site.url}}/{{page.lang}}/projectes/catC.html">Cat C</a></li>
+                                   
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="{{site.url}}/{{page.lang}}/blog.html">Blog</a>
+                                </li>
+                                <li>
+                                    <a href="{{site.url}}/{{page.lang}}/info.html">Info</a>
+                                    <ul class="dl-submenu">
+                                        <li class="dl-back"><a href="#">back</a></li>
+                                        <li><a href="{{site.url}}/{{page.lang}}/info.html#about">About</a></li>
+                                        <li><a href="{{site.url}}/{{page.lang}}/info.html#mapa">{{t.[page.lang].navbar.mapa}}</a></li>
+                                        <li><a href="{{site.url}}/{{page.lang}}/info.html#equip">{{t.[page.lang].navbar.equip}}</a></li>
+                                    </ul>
+                                </li>
+                       
+                            </ul>
+                        </div><!-- /dl-menuwrapper -->
+    
+                        
+                    </nav><!--end:main-nav-->
+
+                    {% endif %}
                     
                 </div><!--end:span12-->
                 

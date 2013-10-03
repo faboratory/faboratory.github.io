@@ -1,0 +1,148 @@
+{% include header.html %}
+    <div id="main-content">
+
+        <div class="breadcrumb flx-divider">
+        
+            <div class="wrapper flx-line">
+            
+                <div class="row-fluid">
+                
+                    <div class="span12 clearfix">
+
+                    {% if page.lang == 'cat' %}
+
+
+                        <a  href="{{site.url}}/index.html">Home</a>
+                        <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+
+                        {% if page.tipologia == 'tallers' %}
+                            <a  href="{{site.url}}/tallers.html">{{t.[page.lang].tallers.t}}</a>
+                            <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                            <a  href="{{site.url}}/tallers/cat{{page.cat}}.html">Cat{{page.cat}}</a>
+                            <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                            <span class="current-page">{{ page.title }}</span>
+                        {% endif %}
+
+                        {% if page.tipologia == 'maquines' %}
+                            <a  href="{{site.url}}/maquines.html">{{t.[page.lang].maquines.m}}</a>
+                            <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                            <a  href="{{site.url}}/maquines/cat{{page.cat}}.html">Cat{{page.cat}}</a>
+                            <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                            <span class="current-page">{{ page.title }}</span>
+                        {% endif %}
+
+                        {% if page.tipologia == 'projectes' %}
+                            <a  href="{{site.url}}/projectes.html">{{t.[page.lang].projectes.p}}</a>
+                            <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                            <a  href="{{site.url}}/projectes/cat{{page.cat}}.html">Cat{{page.cat}}</a>
+                            <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                            <span class="current-page">{{ page.title }}</span>
+                        {% endif %}
+
+                    {% else %}
+                        <a  href="{{site.url}}/{{page.lang}}/index.html">Home</a>
+                        <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+
+                        {% if page.tipologia == 'tallers' %}
+                            <a  href="{{site.url}}/{{page.lang}}/tallers.html">{{t.[page.lang].tallers.t}}</a>
+                            <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                            <a  href="{{site.url}}/{{page.lang}}/tallers/cat{{page.cat}}.html">Cat{{page.cat}}</a>
+                            <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                            <span class="current-page">{{ page.title }}</span>
+                        {% endif %}
+
+                        {% if page.tipologia == 'maquines' %}
+                            <a  href="{{site.url}}/{{page.lang}}/maquines.html">{{t.[page.lang].maquines.m}}</a>
+                            <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                            <a  href="{{site.url}}/{{page.lang}}/maquines/cat{{page.cat}}.html">Cat{{page.cat}}</a>
+                            <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                            <span class="current-page">{{ page.title }}</span>
+                        {% endif %}
+
+                        {% if page.tipologia == 'projectes' %}
+                            <a  href="{{site.url}}/{{page.lang}}/projectes.html">{{t.[page.lang].projectes.p}}</a>
+                            <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                            <a  href="{{site.url}}/{{page.lang}}/projectes/cat{{page.cat}}.html">Cat{{page.cat}}</a>
+                            <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                            <span class="current-page">{{ page.title }}</span>
+                        {% endif %}
+
+                    {% endif %}
+
+                    </div><!--end:span12-->
+                
+                </div><!--end:row-fluid-->
+            
+            </div><!--end:wrapper-->
+        
+        </div><!--end:breadcrumb-->
+        
+        
+        <section class="widget portfolio-widget portfolio-detail flx-divider">
+        
+            <header class="flx-header flx-divider">
+                <div class="wrapper flx-line clearfix">
+                </div><!--end:wrapper-->
+            </header>
+            
+            <div class="wrapper flx-line">
+            
+                <div class="row-fluid">
+                    
+                    <div class="span12">
+                        
+                        <article class="pf-detail-item clearfix">
+                            <h2 class="widget-title">{{ page.title }}</h2>
+                            <div class="pf-detail-img"><img src="{{site.url}}/placeholders/portfolio-images/{{ page.image }}" alt="" />
+
+                                {% if page.video %}
+                                <br>
+                                        <iframe style="width:100%; height:380px" src="http://www.youtube.com/embed/zA92Rw6kNWw" frameborder="0" allowfullscreen></iframe>   
+                                {% endif %}
+
+                            </div>
+                      
+                            <div class="pf-content clearfix">
+                                <header class="clearfix">
+                                    
+                                    
+                                </header>
+                                
+                                {{content}}
+
+                                
+                              {% if page.links %}
+                               {% for l in page.links%}
+
+                                <header class="clearfix">
+
+                                  <span class="entry-categories"><a  href="{{l}}"> {{page.links_name[forloop.index0]}}</a></span>
+                                 </header>
+
+                                {% endfor %}
+
+                              {% endif %}
+                                <!--end:pf-detail-meta-->
+                                <!-- FLECHA per navegar per altres tallers... --> <!--<nav class="pf-detail-nav clearfix"> 
+                                    <a class="pf-detail-prev" href="project-youtube.html"></a>
+                                    <a class="pf-detail-hide" href="portfolio.html"></a>
+                                    <a class="pf-detail-next" href="project-slide.html"></a> -->
+                                </nav><!--end:pf-detail-nav-->
+                            </div><!--end:pf-content-->
+                        </article><!--end:pf-detail-item-->
+                        
+                        
+                            
+                    </div><!--end:span12-->
+                    
+                </div><!--end:row-fluid-->
+                
+            </div><!--end:wrapper-->
+        
+        </section><!--end:portfolio-widget-->
+        
+{% include summary.html %}
+</div><!--end:main-content-->
+
+{% include footer.html %}
+{% include scripts.html %}

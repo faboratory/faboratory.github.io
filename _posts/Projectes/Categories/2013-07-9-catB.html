@@ -1,0 +1,39 @@
+---
+layout: cat_layout
+body: 'pf-3col'
+
+lang: cat
+
+tipologia: 'projectes'
+categories: [projectes]
+tag: categoria_projectes
+cat: 'B'
+
+title: 'Categoria B'
+contingut: 'Projectes Blablablablbalabalbalablablab babalalablabal balablabla balablab'
+image: pf-15.jpg
+
+
+---
+
+{% for tt in site.tags.project reversed%}
+
+    {% if tt.lang == 'cat' and tt.cat == 'B'%}
+
+    <li class="item" data-id="id-1" data-type="art">
+        <div class="view view-first">
+            <img src="{{site.url}}/placeholders/portfolio-images/{{tt.image}}" alt="" />
+            <div class="entry-content"> <br>
+                {{tt.description}}
+            </div>
+            <div class="mask">
+                <ul>
+                    <li class="pf-lightbox"><a> o</a></li>
+                    <li class="pf-header"><a href="{{site.url}}{{tt.url}}" onClick="return felixplus_portfolio_detail_click(jQuery(this), 1, true);">{{tt.title}}</a></li>
+                </ul>
+            </div>
+        </div>
+    </li>
+    {% endif %}
+
+{% endfor %}

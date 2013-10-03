@@ -4,14 +4,41 @@
         
         <div class="fullwidthbanner-container">
             <div class="fullwidthbanner">
-                <ul>
-                    <!-- THE FIRST SLIDE -->
+                                <ul>
+                    {% for s in site.tags.slide %}
+                    <!-- SLIDES -->
                     <li data-transition="fade" data-slotamount="10" data-masterspeed="300" data-thumb="images/thumbs/thumb1.jpg">
                                 <!-- THE MAIN IMAGE IN THE FIRST SLIDE -->
-                                <img src="placeholders/slider/revolution-bg-1.jpg" alt="" >
+                                <img src="{{site.url}}/placeholders/slider/{{s.slide_image}}" alt="" > <!--revolution-bg-1.jpg-->
 
+                                <!-- THE CAPTIONS IN THIS SLDIE -->
+                               
+                                <div class="caption sft {{s.slide_title.format}} "  data-x="{{s.slide_title.x}}" data-y="{{s.slide_title.y}}" data-speed="0" data-start="1" data-easing="easeOutExpo">{{s.slide_title.title}}</div>
+                                <div class="caption lfb {{s.slide_subtitle.format}}"  data-x="{{s.slide_subtitle.x}}" data-y="{{s.slide_subtitle.y}}" data-speed="0" data-start="1" >{{s.slide_subtitle.subtitle}}</div>
                                 
                                 
+                    </li>
+                    {% endfor %}
+
+                    <!-- THE SECOND SLIDE -->
+                    <li data-transition="fade" data-slotamount="15" data-masterspeed="300" data-delay="9400" data-thumb="images/thumbs/thumb2.jpg">
+                                <img src="{{site.url}}/placeholders/slider/revolution-bg-2.jpg" alt="" >
+                                
+                                <div class="caption lfl very_big_white"  data-x="0" data-y="216" data-speed="300" data-start="1200" data-easing="easeOutExpo">Retina display</div>
+                                <div class="caption lfl very_big_white"  data-x="0" data-y="275" data-speed="300" data-start="1300" data-easing="easeOutExpo">Supported</div>
+                                <div class="caption lfb big_white"  data-x="0" data-y="360" data-speed="300" data-start="1500" data-easing="easeOutExpo"><a href="#">Buy Now</a></div>
+                    </li>
+                    
+                    <!-- THE THIRD SLIDE -->
+                    <li data-transition="fade" data-slotamount="15" data-masterspeed="300">
+                                <img src="{{site.url}}/placeholders/slider/revolution-bg-3.jpg" alt="" >
+                            
+                                <div class="caption lfl stl bg-op"
+                                     data-x="0"
+                                     data-y="380"
+                                     data-speed="300"
+                                     data-start="500"
+                                     data-easing="easeOutExpo" ><p class="big_yellow">Four awesome</p><span class="medium_white">Home page</span></div>
                     </li>
 
                     
@@ -28,6 +55,8 @@
                     <div class="span12">
                         <div class="flx-intro">
                       				<h1><p>En construcció...  </p></h1>
+                                    <h1><p>En construcción...  </p></h1>
+                                    <h1><p>Under construction...  </p></h1>
                         </div>
                     </div>
                 </div><!--end:row-fluid-->
@@ -59,22 +88,22 @@
                             <li class="clearfix">
                                 <span ><i class="icon-star-empty"></i></span>
                                 <div class="entry-content">
-                                    <h5 class="entry-title"><a href="#" >Support 24/7</a></h5>
-                                    <p>Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat.</p>
+                                    <h5 class="entry-title"><a href="#" >{{t.[page.lang].novetats.title-feature1}}</a></h5>
+                                    <p>{{t.[page.lang].novetats.description-feature1}}</p>
                                 </div>
                             </li>
                                 <li class="clearfix">
                                 <span ><i class="icon-star-empty"></i></span>
                                 <div class="entry-content">
-                                    <h5 class="entry-title"><a href="#" >Support 24/7</a></h5>
-                                    <p>Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat.</p>
+                                    <h5 class="entry-title"><a href="#" >{{t.[page.lang].novetats.title-feature2}}</a></h5>
+                                    <p>{{t.[page.lang].novetats.description-feature2}}</p>
                                 </div>
                             </li>
                                 <li class="clearfix">
                                 <span ><i class="icon-star-empty"></i></span>
                                 <div class="entry-content">
-                                    <h5 class="entry-title"><a href="#" >Support 24/7</a></h5>
-                                    <p>Curabitur lacinia tincidunt lectus, ut adipiscing urna pellentesque sed. Etiam quis metus sed arcu congue volutpat.</p>
+                                    <h5 class="entry-title"><a href="#" >{{t.[page.lang].novetats.title-feature3}}</a></h5>
+                                    <p>{{t.[page.lang].novetats.description-feature3}}</p>
                                 </div>
                             </li>
                         </ul>
@@ -97,55 +126,34 @@
 
          	 <div class="widget flx-latest-blog">
                 
-                	<h2 class="widget-title">Latest Blogs</h2>
+                	<h2 class="widget-title">{{t.[page.lang].novetats.last-blog}}</h2>
                     
                     <div id="container" class="clearfix entry-item-list">
+
+                    {% for post in site.tags.blogpost limit:5 %}
                 
                         <article class="post-item standard-post element">
                             
                             <div class="flx-entry-thumb">
-                                <a href="#"><img src="placeholders/post-images/post-1.jpg" alt="" /></a>
+                                <a href="{{site.url}}{{post.url}}"><img src="{{site.url}}/placeholders/post-images/{{post.image}}" alt="" /></a>
                             </div><!--end:flx-entry-thumb-->
                             <header>
-                                <h2 class="entry-title"><a  href="#">Morbi tristique, mauris eu imperdiet bibendum.</a></h2>
-                                <span class="entry-author"><i class="icon-user"></i><a  href="#">Administrator</a></span>
-                                <span class="entry-date"><i class="icon-time"></i>28.4.2013</span>
-                                <span class="entry-categories"><i class="icon-suitcase"></i><a  href="#">illustrator</a></span>
-                                <span class="entry-comment"><i class="icon-comments-alt"></i><a  href="#">15 comments</a></span>
+                                <h2 class="entry-title"><a  href="{{site.url}}{{post.url}}">{{post.title}}</a></h2>
+                                <span class="entry-date"><i class="icon-time"></i>{{ post.date | date: "%m-%d-%Y" }}</span>
+                                <span class="entry-categories"><i class="icon-suitcase"></i><a  href="#">{{post.categoria}}</a></span>
                             </header>
                             <div class="entry-content clearfix">                                	
-                                <p>In varius varius justo, eget ultrices mauris rhoncus non. Morbi tristique, mauris eu imperdiet bibendum, velit diam iaculis velit, in ornare massa enim at lorem. Etiam risus diam, porttitor vitae ultrices quis, dapibus id dolor. Morbi venenatis lacinia rhoncus. Vestibulum tincidunt ullamcorper eros eget luctus. Nulla eget porttitor libero.</p>
-                                <a href="#" class="small-button green more-link">Continue reading</a>
+                               <p>{{post.sinopsis}}</p>
+                                <a href="{{site.url}}{{post.url}}" class="small-button green more-link">{{t.[page.lang].novetats.continua}}</a>
                                 <div class="outside-info">
-                                    <p class="outside-date">28<span>Mar</span></p>
+                                    <p class="outside-date">{{ post.date | date: "%d" }}<span>{{ post.date | date: "%B" }}</span></p>
                                     <p class="outside-icon"><i class="icon-picture"></i></p>
                                 </div><!--end:outside-info-->
                             </div><!--end:entry-content-->
                             
                         </article><!--end:post-item-->
-                        
-                        <article class="post-item video-post element">
-                            
-                            <div class="flx-entry-thumb">
-                                <a href="#"><img src="placeholders/post-images/post-5.jpg" alt="" /></a>
-                            </div><!--end:flx-entry-thumb-->
-                            <header>
-                                <h2 class="entry-title"><a  href="#">Morbi tristique, mauris eu imperdiet bibendum.</a></h2>
-                                <span class="entry-author"><i class="icon-user"></i><a  href="#">Administrator</a></span>
-                                <span class="entry-date"><i class="icon-time"></i>28.4.2013</span>
-                                <span class="entry-categories"><i class="icon-suitcase"></i><a  href="#">illustrator</a></span>
-                                <span class="entry-comment"><i class="icon-comments-alt"></i><a  href="#">15 comments</a></span>
-                            </header>
-                            <div class="entry-content clearfix">
-                                
-                                <p>In varius varius justo, eget ultrices mauris rhoncus non. Morbi tristique, mauris eu imperdiet bibendum, velit diam iaculis velit, in ornare massa enim at lorem. Etiam risus diam, porttitor vitae ultrices quis, dapibus id dolor. Morbi venenatis lacinia rhoncus. Vestibulum tincidunt ullamcorper eros eget luctus. Nulla eget porttitor libero.</p>
-                                <a href="#" class="small-button green more-link">Continue reading</a>
-                                <div class="outside-info">
-                                    <p class="outside-date">22<span>Mar</span></p>
-                                    <p class="outside-icon"><i class="icon-film"></i></p>
-                                </div><!--end:outside-info-->
-                            </div><!--end:entry-content-->
-                        </article><!--end:flx-entry-item-->
+
+                       {% endfor %}
       
                     
                     </div><!--end:container-->
@@ -164,6 +172,3 @@
     
     {% include footer.html %}
     {% include scripts.html %}
-
-
-
