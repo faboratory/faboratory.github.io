@@ -25,6 +25,23 @@
 	height: 400px;
 }
 
+#Features, #Blog {
+	padding-top: 60px;
+	margin-top: -60px;
+}
+
+#about{
+	padding-top: 80px;
+	margin-top: -45px;
+}
+
+#equip, #map{
+	padding-top: 80px;
+	margin-top: -50px;
+}
+
+
+
 /* =========================================================
 ******************Common styles*****************************
 ============================================================ */
@@ -276,6 +293,7 @@ p {
 #logo-image a img {
 	width:100%;
 	display:block;
+	
 
 }
 /*-----------------Main Menu------------------*/

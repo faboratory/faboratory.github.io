@@ -11,11 +11,11 @@ cat:
          equip: 'Equip'
 
     novetats:
-         title-feature1: 'Simple'
+         title-feature1: '3D printers'
          description-feature1: 'Cat blabalbala'
-         title-feature2: 'Ràpid'
+         title-feature2: 'Open tech'
          description-feature2: 'Cat blablabala'
-         title-feature3: 'Potent'
+         title-feature3: 'Digital fabrication'
          description-feature3: 'Cat blabalba'
          last-blog: 'Últimes entrades'
          continua: 'Continua llegint'
@@ -51,11 +51,11 @@ es:
          equip: 'Equipo'
 
     novetats:
-         title-feature1: 'Simple'
+         title-feature1: '3D printers'
          description-feature1: 'Esp blabalbala'
-         title-feature2: 'Rápido'
+         title-feature2: 'Open tech'
          description-feature2: 'Esp blablabala'
-         title-feature3: 'Potente'
+         title-feature3: 'Digital fabrication'
          description-feature3: 'Esp blabalba'
          last-blog: 'Últimos posts'
          continua: 'Continua leyendo'
@@ -91,11 +91,11 @@ en:
          equip: 'Team'
 
     novetats:
-         title-feature1: 'Simple'
+         title-feature1: '3D printers'
          description-feature1: 'En blabalbala'
-         title-feature2: 'Fast'
+         title-feature2: 'Open tech'
          description-feature2: 'En blablabala'
-         title-feature3: 'Powerful'
+         title-feature3: 'Digital fabrication'
          description-feature3: 'En blabalba'
          last-blog: 'Last posts'
          continua: 'Continue reading'

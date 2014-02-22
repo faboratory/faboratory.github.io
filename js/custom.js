@@ -679,5 +679,7 @@ jQuery(document).ready(function () {
          
     });
 	
-});/* =========================================================*********************************Twitter********************==========================================================*/jQuery(function(){	jQuery('#tweets').tweetable({		username: 'philipbeel', 		time: true,		rotate: false,		speed: 4000, 		limit: 3,		replies: false,		position: 'append',		failed: "Sorry, twitter is currently unavailable for this user.",		html5: true,		onComplete:function($ul){			jQuery('time').timeago();		}	});});
+});
+
+/* =========================================================*********************************Twitter********************==========================================================*/jQuery(function(){	jQuery('#tweets').tweetable({		username: 'philipbeel', 		time: true,		rotate: false,		speed: 4000, 		limit: 3,		replies: false,		position: 'append',		failed: "Sorry, twitter is currently unavailable for this user.",		html5: true,		onComplete:function($ul){			jQuery('time').timeago();		}	});});
 

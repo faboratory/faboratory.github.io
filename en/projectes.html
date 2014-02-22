@@ -11,6 +11,8 @@ cat: 'P'
 
 {% for t in site.tags.categoria_projectes reversed %}
 
+{% if t.lang == page.lang %}
+
 <section class="widget portfolio-widget portfolio-detail flx-divider">
 
 
@@ -40,4 +42,5 @@ cat: 'P'
     </div><!--end:wrapper-->
 
 </section><!--end:portfolio-widget-->
+{% endif %}
 {% endfor %}

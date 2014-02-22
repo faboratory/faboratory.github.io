@@ -11,33 +11,37 @@ cat: 'M'
 
 {% for t in site.tags.categoria_maquines reversed %}
 
-<section class="widget portfolio-widget portfolio-detail flx-divider">
+    {% if t.lang == page.lang %}
+
+    <section class="widget portfolio-widget portfolio-detail flx-divider">
 
 
-    
-    <div class="wrapper flx-line">
-    
-        <div class="row-fluid">
-            
-            <div class="span12">
-                
-                <article class="pf-detail-item clearfix">
-                    <h2 class="widget-title"></h2>
-
-                    <div class="pf-detail-img span3"> <a  href="{{t.url}}"><img src="placeholders/portfolio-images/pf-15.jpg" alt="" /></a></div>
-                    <div class="pf-content clearfix span6">
-                         <a  href="{{t.url}}"><h3>{{t.title}}</h3></a>
-                        <p>{{t.contingut}}</p>
-                    </div><!--end:pf-content-->
-                </article><!--end:pf-detail-item-->
-                
-                
-                    
-            </div><!--end:span12-->
-            
-        </div><!--end:row-fluid-->
         
-    </div><!--end:wrapper-->
+        <div class="wrapper flx-line">
+        
+            <div class="row-fluid">
+                
+                <div class="span12">
+                    
+                    <article class="pf-detail-item clearfix">
+                        <h2 class="widget-title"></h2>
 
-</section><!--end:portfolio-widget-->
+                        <div class="pf-detail-img span3"> <a  href="{{t.url}}"><img src="placeholders/portfolio-images/pf-15.jpg" alt="" /></a></div>
+                        <div class="pf-content clearfix span6">
+                             <a  href="{{t.url}}"><h3>{{t.title}}</h3></a>
+                            <p>{{t.contingut}}</p>
+                        </div><!--end:pf-content-->
+                    </article><!--end:pf-detail-item-->
+                    
+                    
+                        
+                </div><!--end:span12-->
+                
+            </div><!--end:row-fluid-->
+            
+        </div><!--end:wrapper-->
+
+    </section><!--end:portfolio-widget-->
+
+    {% endif %}
 {% endfor %}

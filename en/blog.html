@@ -8,6 +8,8 @@ categories: [en]
 ---
 
 {% for post in site.tags.blogpost limit:10 %}
+
+ {% if post.lang == page.lang %}
 	 <article class="post-item standard-post">
 	    <header>
 	        <h2 class="entry-title"><a  href="{{site.url}}{{post.url}}">{{post.title}}</a></h2>
@@ -26,5 +28,7 @@ categories: [en]
 	    </div><!--end:entry-content-->
 	    
 	</article><!--end:post-item-->
+
+ {% endif %}
 
 {% endfor %}

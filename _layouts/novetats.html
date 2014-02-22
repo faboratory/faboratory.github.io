@@ -4,7 +4,7 @@
         
         <div class="fullwidthbanner-container">
             <div class="fullwidthbanner">
-                                <ul>
+                    <ul>
                     {% for s in site.tags.slide %}
                     <!-- SLIDES -->
                     <li data-transition="fade" data-slotamount="10" data-masterspeed="300" data-thumb="images/thumbs/thumb1.jpg">
@@ -19,27 +19,6 @@
                                 
                     </li>
                     {% endfor %}
-
-                    <!-- THE SECOND SLIDE -->
-                    <li data-transition="fade" data-slotamount="15" data-masterspeed="300" data-delay="9400" data-thumb="images/thumbs/thumb2.jpg">
-                                <img src="{{site.url}}/placeholders/slider/revolution-bg-2.jpg" alt="" >
-                                
-                                <div class="caption lfl very_big_white"  data-x="0" data-y="216" data-speed="300" data-start="1200" data-easing="easeOutExpo">Retina display</div>
-                                <div class="caption lfl very_big_white"  data-x="0" data-y="275" data-speed="300" data-start="1300" data-easing="easeOutExpo">Supported</div>
-                                <div class="caption lfb big_white"  data-x="0" data-y="360" data-speed="300" data-start="1500" data-easing="easeOutExpo"><a href="#">Buy Now</a></div>
-                    </li>
-                    
-                    <!-- THE THIRD SLIDE -->
-                    <li data-transition="fade" data-slotamount="15" data-masterspeed="300">
-                                <img src="{{site.url}}/placeholders/slider/revolution-bg-3.jpg" alt="" >
-                            
-                                <div class="caption lfl stl bg-op"
-                                     data-x="0"
-                                     data-y="380"
-                                     data-speed="300"
-                                     data-start="500"
-                                     data-easing="easeOutExpo" ><p class="big_yellow">Four awesome</p><span class="medium_white">Home page</span></div>
-                    </li>
 
                     
                 </ul>
@@ -131,6 +110,9 @@
                     <div id="container" class="clearfix entry-item-list">
 
                     {% for post in site.tags.blogpost limit:5 %}
+
+                     {% if post.lang == page.lang %}
+
                 
                         <article class="post-item standard-post element">
                             
@@ -152,8 +134,9 @@
                             </div><!--end:entry-content-->
                             
                         </article><!--end:post-item-->
+                     {% endif %}
 
-                       {% endfor %}
+                    {% endfor %}
       
                     
                     </div><!--end:container-->
