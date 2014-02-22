@@ -1,7 +1,6 @@
 name: "FABoratory"
-
 url: 
-
-
-markdown: rdiscount
+markdown: redcarpet
 permalink: /:categories/:title.html
+
+excerpt_separator: <!-- excerpt-->
