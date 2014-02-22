@@ -1,0 +1,127 @@
+<!doctype html>
+{% assign t = site.tags.translations[0] %}
+
+<html lang="cat">
+<head>
+    <meta charset="UTF-8" />
+	<title>FABoratory - 3D printers</title>
+	<meta name="description" content="FABoratory - 3D printers" />
+
+	<meta name="keywords" content="3D, printers, openhardware, workshops" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+    <link rel="stylesheet" href="{{site.url}}/css/bootstrap.css" media="all">
+    <link rel="stylesheet" href="{{site.url}}/css/font-awesome.min.css" media="all">
+    <link rel="stylesheet" href="{{site.url}}/css/flexslider.css" media="all">
+    <link rel="stylesheet" href="{{site.url}}/css/prettyPhoto.css" media="all">
+    <link rel="stylesheet" href="{{site.url}}/css/mediaelementplayer.min.css" media="all">
+    <link rel="stylesheet" href="{{site.url}}/css/pf-dropdown.css" media="all">
+    <link rel="stylesheet" href="{{site.url}}/css/superfish.css" media="all">
+	<link rel="stylesheet" href="{{site.url}}/css/bra_social_media.css" media="all">
+	<link rel="stylesheet" href="{{site.url}}/css/component.css" media="all">
+	<link rel="stylesheet" href="{{site.url}}/css/theme-options.css" media="all">
+    <link rel="stylesheet" href="{{site.url}}/css/icoMoon.css" media="all">
+    <link rel="stylesheet" href="{{site.url}}/css/iview.css" media="all">
+    <link rel="stylesheet" href="{{site.url}}/css/revolution-slider.css" media="all">
+    <link rel="stylesheet" href="{{site.url}}/css/fullwidth.css" media="all">
+    <link rel="stylesheet" href="{{site.url}}/css/style.css" media="all" />
+    <link rel="stylesheet" href="{{site.url}}/css/bootstrap-responsive.css" media="all">
+    <link rel="stylesheet" href="{{site.url}}/css/responsive.css" media="all">
+
+
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+		<link rel="stylesheet" href="css/ie.css" type="text/css" media="all" />		
+    <![endif]-->
+
+    <!-- Favicons
+        ================================================== -->
+    <link rel="shortcut icon" href="{{site.url}}/placeholders/logo3.jpg">
+	
+	<!-- Style
+	================================================== -->
+    <link rel="stylesheet" href="{{site.url}}/css/skin/orange.css" type="text/css" id="colors" />
+    <link rel="stylesheet" href="{{site.url}}/css/skin/orange.css" type="text/css" id="templates" />
+
+    <!-- Font
+            ================================================== -->
+    <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,300italic,200italic,400italic,600italic,600,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    
+
+</head>
+<body class="{{page.body}} dark-footer">
+    <body class="{{page.body}} dark-footer">
+    
+    <header id="flx-header" class="flx-divider">
+        
+        <div class="wrapper">
+            
+            <div class="row-fluid">
+                
+                <div class="span12 clearfix">
+                    
+                    <div id="logo-image" class="span1">
+                    
+                        <a href="{{site.url}}/index.html"><img src="{{site.url}}/placeholders/logo3.jpg" alt="" /></a>
+                        
+                    </div><!--end:logo-image-->
+
+                    
+                </div><!--end:span12-->
+                
+            </div><!--end:row-fluid-->
+            
+        </div><!--end:wrapper-->
+        
+    </header><!--end:flx-header-->
+
+ <div id="main-content">
+        
+         <div class="flx-divider">
+            <div class="wrapper flx-line">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div class="flx-intro">
+                                    <h1><p>En construcció...  </p></h1>
+                                    <h1><p>En construcción...  </p></h1>
+                                    <h1><p>Under construction...  </p></h1>
+                        </div>
+                    </div>
+                </div><!--end:row-fluid-->
+            </div><!--end:wrapper-->
+        </div><!--end:flx-divider-->
+
+        <div  class="flx-divider">
+            <div class="wrapper flx-line">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div class="flx-intro">
+                                    {{content}}
+                        </div>
+                    </div>
+                </div><!--end:row-fluid-->
+            </div><!--end:wrapper-->
+        </div><!--end:flx-divider-->
+
+        <div  class="flx-divider">
+            <div class="wrapper flx-line">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div class="flx-intro">
+                             <h2> <p> Contacte/Contacto/Contact </p></h2>
+                             <p> info@faboratory.org </p>
+                        </div>
+                    </div>
+                </div><!--end:row-fluid-->
+            </div><!--end:wrapper-->
+        </div><!--end:flx-divider-->
+        
+    </div><!--end:main-content-->
+
+    
+    {% include footer.html %}
+    {% include scripts.html %}
